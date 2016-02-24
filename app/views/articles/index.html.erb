@@ -1,0 +1,12 @@
+<h1>Listing articles</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <a href="#{article_path}">
+        <h2><%= article.title %></h2>
+        <p><%= article.text %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
