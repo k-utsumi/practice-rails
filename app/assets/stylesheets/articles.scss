@@ -7,6 +7,11 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  margin: .5em 0;
+  font-size: 18px;
+}
+
 ul {
   margin: 0 0 1em;
   padding-left: 1.25em;
@@ -17,4 +22,16 @@ ul {
   p {
     margin: 0;
   }
+}
+
+
+.alert {
+  $color: #c99;
+  padding: 1em;
+  border-radius: 6px;
+  border: solid $color;
+  background-color: rgba($color, .4);
+
+  :first-child { margin-top: 0 }
+  :last-child { margin-bottom: 0 }
 }
