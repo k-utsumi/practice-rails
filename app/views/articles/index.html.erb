@@ -3,10 +3,17 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <a href="#{article_path}">
+      <a href="<%= article_path(article) %>">
         <h2><%= article.title %></h2>
-        <p><%= article.text %></p>
-      </div>
+      </a>
+      <p><%= article.text %></p>
+      <ul>
+        <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button' %></li>
+        <li><%= link_to '削除', article_path(article), role: 'button', class: 'button',
+          method: :delete,
+          data: { confirm: 'Are you sure?' }
+        %></li>
+      </ul>
     </li>
   <% end %>
 </ul>
