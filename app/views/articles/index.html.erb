@@ -1,13 +1,11 @@
-<h1>Listing articles</h1>
+<h1>記事一覧</h1>
 
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <a href="<%= article_path(article) %>">
-        <h2><%= article.title %></h2>
-      </a>
+      <h2><%= link_to article.title, article_path(article) %></h2>
       <p><%= article.text %></p>
-      <ul>
+      <ul class="list-inline">
         <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button' %></li>
         <li><%= link_to '削除', article_path(article), role: 'button', class: 'button',
           method: :delete,

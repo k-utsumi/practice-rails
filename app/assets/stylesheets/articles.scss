@@ -17,11 +17,9 @@ ul {
   padding-left: 1.25em;
   h2 {
     margin: 0;
-    font-size: 100%;
+    font-size: 20px;
   }
-  p {
-    margin: 0;
-  }
+  ul, p { margin: 0 }
 }
 
 
@@ -34,4 +32,9 @@ ul {
 
   :first-child { margin-top: 0 }
   :last-child { margin-bottom: 0 }
+}
+
+.list-inline {
+  padding-left: 0;
+  > li { display: inline-block }
 }
