@@ -63,6 +63,9 @@ dd {
   + dt { margin-top: .75em }
 }
 
+input,
+textarea { font: inherit }
+
 input[type=text],
 textarea {
   display: block;  // vertical-align で下にアキが出来る問題を解消
@@ -71,7 +74,6 @@ textarea {
   border: solid 1px $input-border-color;
   padding: .5em;
   width: 100%;
-  font: inherit;
 
   resize: vertical;
 }

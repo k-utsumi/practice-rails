@@ -15,15 +15,14 @@ body { background-color: #f3f3f3 }
 
 main {
   flex-grow: 1;
-  padding: 1em;
+  padding: 2em 2.5em;
   background-color: rgba(#fff, 1.75);
 }
 
 .sub {
   display: flex;
   margin-left: 1em;
-  width: 240px;
-  min-height: 3em;
+  min-width: 240px;
   background-color: #f0f9ff;
 
   p { margin: auto }
