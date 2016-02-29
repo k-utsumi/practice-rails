@@ -4,13 +4,17 @@
 .button {
   display: inline-block;
   border-radius: 4px;
-  border: solid 1px rgba(#000, .1);
+  border: solid 1px $color-border-base;
   padding: .25em .5em;
   background-color: #888;
   color: #fff;
   text-decoration: none;
+
+  vertical-align: bottom;
+
   letter-spacing: .1em;
   padding-right: .4em;
+
   line-height: 1.25;
 
   &.size-small { font-size: 13px }
@@ -31,25 +35,40 @@
 @import "components/lists";
 
 
-article {
+.article {
+  header {
+    overflow: hidden;
+
+    h1 { float: left }
+    ul {
+      margin-top: 3px;
+      text-align: right;
+    }
+  }
+
   .text {
-    line-height: 1.5;
+    line-height: (22 / 16);
     white-space: pre;
   }
 }
 
-.block-comment {
-  margin: 1em 0;
-  border-radius: 4px;
-  border: solid 1px rgba(#000, .1);
-  padding: 1em .75em;
+.block-comment,
+.block-comment-add {
+  margin: 2.5em 1.25em;
   font-size: 14px;
 
-  :first-child { margin-top: 0 }
-  :last-child { margin-bottom: 0 }
+}
+
+.block-comment-add {
+  border-radius: $border-radius-base;
+  border: solid 1px $color-border-base;
+  padding: 1em;
 
   .blc-heading {
     margin-bottom: .25em;
   }
-  p { margin-bottom: .5em }
+  dt { color: #aaa }
+
+  :first-child { margin-top: 0 }
+  :last-child { margin-bottom: 0 }
 }

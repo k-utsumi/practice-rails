@@ -1,36 +1,48 @@
-<article>
-  <h1><%= @article.title %></h1>
+<article class="article">
+  <header>
+    <h1><%= @article.title %></h1>
+    <ul class="list-inline">
+      <li><%= link_to '編集', edit_article_path(@article), role: 'button', class: 'button size-small' %></li>
+      <li><%= link_to '削除',      article_path(@article), role: 'button', class: 'button size-small',
+        method: :delete,
+        data: { confirm: '削除してもよろしいですか？' }
+      %></li>
+    </ul>
+  </header>
 
   <p class="text"><%= @article.text %></p>
 
   <section class="block-comment">
-    <h2 class="blc-heading">コメントを書く</h2>
-    <%= form_for ([@article, @article.comments.build]) do |f| %>
+    <h2 class="blc-heading">コメント</h2>
 
-      <p>
-        <%= f.label :commenter %><br>
-        <%= f.text_field :commenter %>
-      </p>
-
-      <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-      </p>
-
-      <p>
-        <%= f.submit %>
-      </p>
+    <% @article.comments.each do |comment| %>
+      <article>
+        <dl>
+          <dt><%= comment.commenter %></dt>
+          <dd><%= comment.body %></dd>
+        </dl>
+      </article>
     <% end %>
   </section>
 
-  <ul class="list-inline">
-    <li><%= link_to '編集', edit_article_path(@article), role: 'button', class: 'button size-small' %></li>
-    <li><%= link_to '削除',      article_path(@article), role: 'button', class: 'button size-small',
-      method: :delete,
-      data: { confirm: '削除してもよろしいですか？' }
-    %></li>
-  </ul>
+  <section class="block-comment-add">
+    <%
+    # <h2 class="blc-heading">コメントを書く</h2>
+    %>
+    <%= form_for ([@article, @article.comments.build]) do |f| %>
 
+      <dl>
+        <dt><%= f.label :commenter %></dt>
+        <dd><%= f.text_field :commenter %></dd>
+        <dt><%= f.label :body %></dt>
+        <dd><%= f.text_area :body %></dd>
+      </dl>
+
+      <p>
+        <%= f.submit value: "コメントを投稿", class: "button" %>
+      </p>
+    <% end %>
+  </section>
 
 </article>
 

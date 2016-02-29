@@ -24,22 +24,25 @@
 
 body {
   margin: 0;
-  font: 100%/1.25 Meiryo, "Helvetica Neue", Helvetica, sans-serif;
+  font: 100%/1.25 Meiryo, "Helvetica Neue", Helvetica, YuGothic, sans-serif;
 }
 
 h1 {
-  margin: .5em 0;
+  margin: 0 0 1rem;
   font-size: 24px;
 }
 
 h2 {
-  margin: .5em 0;
+  margin: 0 0 .75rem;
   font-size: 18px;
 }
 
-ul {
+p {
+  margin: 0 0 .75em;
+}
+
+ul, ol, dl {
   margin: 0 0 1em;
-  padding-left: 1.25em;
   h2 {
     font-size: 20px;
 
@@ -52,9 +55,25 @@ ul {
   > :first-child { margin-top: 0 }
   > :last-child { margin-bottom: 0 }
 }
+ul { padding-left: 1.25em }
 
-p {
-  margin: 0 0 1em;
+dt { font-weight: bolder }
+dd {
+  margin: .5em 0;
+  + dt { margin-top: .75em }
+}
+
+input[type=text],
+textarea {
+  display: block;  // vertical-align で下にアキが出来る問題を解消
+  box-sizing: border-box;
+  border-radius: $border-radius-base;
+  border: solid 1px $input-border-color;
+  padding: .5em;
+  width: 100%;
+  font: inherit;
+
+  resize: vertical;
 }
 
 .text-left { text-align: left }
