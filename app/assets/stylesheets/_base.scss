@@ -1,0 +1,57 @@
+// _base.scss
+// ==================================================
+
+
+
+// Level 1
+// --------------------------------------------------
+
+
+// _________________________ Level 2
+
+// _____ Level 3 _____
+
+// Level 4
+
+// _ Level 5
+
+// __ Level 6
+
+
+
+// Level 1
+// --------------------------------------------------
+
+body {
+  font: 100%/1.25 Meiryo, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 {
+  margin: .5em 0;
+  font-size: 24px;
+}
+
+h2 {
+  margin: .5em 0;
+  font-size: 18px;
+}
+
+ul {
+  margin: 0 0 1em;
+  padding-left: 1.25em;
+  h2 {
+    margin: 0;
+    font-size: 20px;
+
+    a { text-decoration: none }
+  }
+  p { margin: 0 }
+  ul { margin: .25em 0 .5em }
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.text-left { text-align: left }
+.text-right { text-align: left }

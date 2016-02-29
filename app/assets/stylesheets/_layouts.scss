@@ -1,0 +1,18 @@
+// _layouts.scss
+// ==================================================
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+main {
+  display: flex;
+  width: 75%;
+}
+
+.sub {
+  display: flex;
+  min-height: 3em;
+  background-color: #ccc;
+}
