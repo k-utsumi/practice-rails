@@ -1,17 +1,22 @@
 <h1>記事一覧</h1>
 
-<ul>
+<ul class="list-articles">
   <% @articles.each do |article| %>
     <li>
       <h2><%= link_to article.title, article_path(article) %></h2>
-      <p><%= article.text %></p>
+      <p class="text"><%= article.text %></p>
       <ul class="list-inline">
-        <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button' %></li>
-        <li><%= link_to '削除', article_path(article), role: 'button', class: 'button',
+        <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button size-small' %></li>
+        <li><%= link_to '削除',      article_path(article), role: 'button', class: 'button size-small',
           method: :delete,
           data: { confirm: 'Are you sure?' }
         %></li>
       </ul>
+
     </li>
   <% end %>
+</ul>
+
+<ul>
+  <li><%= link_to 'トップページ', root_url %></li>
 </ul>
