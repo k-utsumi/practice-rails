@@ -23,6 +23,7 @@
 // --------------------------------------------------
 
 body {
+  margin: 0;
   font: 100%/1.25 Meiryo, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -40,13 +41,16 @@ ul {
   margin: 0 0 1em;
   padding-left: 1.25em;
   h2 {
-    margin: 0;
     font-size: 20px;
 
     a { text-decoration: none }
   }
-  p { margin: 0 }
-  ul { margin: .25em 0 .5em }
+  h2,
+  p,
+  ul { margin-bottom: .5em }
+
+  > :first-child { margin-top: 0 }
+  > :last-child { margin-bottom: 0 }
 }
 
 p {
