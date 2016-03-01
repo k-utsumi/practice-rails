@@ -1,0 +1,13 @@
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+
+  <dl>
+    <dt><%= f.label :commenter %></dt>
+    <dd><%= f.text_field :commenter %></dd>
+    <dt><%= f.label :body %></dt>
+    <dd><%= f.text_area :body %></dd>
+  </dl>
+
+  <p>
+    <%= f.submit value: "コメントを投稿", role: "button", class: "button" %>
+  </p>
+<% end %>

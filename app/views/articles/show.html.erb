@@ -16,33 +16,14 @@
 
   <section class="block-comment">
     <h2 class="blc-heading">コメント</h2>
-
-    <% @article.comments.each do |comment| %>
-      <article>
-        <dl>
-          <dt><%= comment.commenter %></dt>
-          <dd><%= simple_format(comment.body) %></dd>
-        </dl>
-      </article>
-    <% end %>
+<%= render @article.comments %>
 
     <section class="block-comment-add">
-      <%
+<%
       # <h3 class="blc-heading">コメントを書く</h3>
-      %>
-      <%= form_for ([@article, @article.comments.build]) do |f| %>
+%>
+<%= render "comments/form" %>
 
-        <dl>
-          <dt><%= f.label :commenter %></dt>
-          <dd><%= f.text_field :commenter %></dd>
-          <dt><%= f.label :body %></dt>
-          <dd><%= f.text_area :body %></dd>
-        </dl>
-
-        <p>
-          <%= f.submit value: "コメントを投稿", role: "button", class: "button" %>
-        </p>
-      <% end %>
     </section>
   </section>
 

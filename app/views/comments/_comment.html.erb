@@ -1,0 +1,13 @@
+<article>
+  <dl>
+    <dt><%= comment.commenter %></dt>
+    <dd><%= simple_format(comment.body) %></dd>
+  </dl>
+
+  <ul class="list-inline">
+    <li><%= link_to '削除', [comment.article, comment], role: 'button', class: 'button size-small',
+      method: :delete,
+      data: { confirm: '削除してもよろしいですか？' }
+    %></li>
+  </ul>
+</article>
