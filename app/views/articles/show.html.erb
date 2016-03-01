@@ -10,7 +10,9 @@
     </ul>
   </header>
 
-  <p class="text"><%= @article.text %></p>
+  <div class="text">
+    <%= simple_format(@article.text) %>
+  </div>
 
   <section class="block-comment">
     <h2 class="blc-heading">コメント</h2>
@@ -19,32 +21,34 @@
       <article>
         <dl>
           <dt><%= comment.commenter %></dt>
-          <dd><%= comment.body %></dd>
+          <dd><%= simple_format(comment.body) %></dd>
         </dl>
       </article>
     <% end %>
-  </section>
 
-  <section class="block-comment-add">
-    <%
-    # <h2 class="blc-heading">コメントを書く</h2>
-    %>
-    <%= form_for ([@article, @article.comments.build]) do |f| %>
+    <section class="block-comment-add">
+      <%
+      # <h3 class="blc-heading">コメントを書く</h3>
+      %>
+      <%= form_for ([@article, @article.comments.build]) do |f| %>
 
-      <dl>
-        <dt><%= f.label :commenter %></dt>
-        <dd><%= f.text_field :commenter %></dd>
-        <dt><%= f.label :body %></dt>
-        <dd><%= f.text_area :body %></dd>
-      </dl>
+        <dl>
+          <dt><%= f.label :commenter %></dt>
+          <dd><%= f.text_field :commenter %></dd>
+          <dt><%= f.label :body %></dt>
+          <dd><%= f.text_area :body %></dd>
+        </dl>
 
-      <p>
-        <%= f.submit value: "コメントを投稿", role: "button", class: "button size-small" %>
-      </p>
-    <% end %>
+        <p>
+          <%= f.submit value: "コメントを投稿", role: "button", class: "button" %>
+        </p>
+      <% end %>
+    </section>
   </section>
 
 </article>
+
+<hr>
 
 <ul>
   <li><%= link_to '一覧に戻る', articles_path %></li>

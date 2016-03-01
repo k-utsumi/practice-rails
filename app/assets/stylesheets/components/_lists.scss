@@ -6,8 +6,9 @@
 
 
 .list-articles {
-  .lst-heading { margin-bottom: .25rem }
-  .text {
-    white-space: pre;
+  .lst-heading {
+    margin-bottom: .25rem;
+    font-size: 100%;
   }
+  .text { font-size: 14px }
 }
