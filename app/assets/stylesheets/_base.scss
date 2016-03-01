@@ -37,12 +37,11 @@ h2 {
   font-size: 18px;
 }
 
-p {
-  margin: 0 0 .75em;
+p, ul, ol, dl {
+  margin: 0 0 1rem;
 }
 
 ul, ol, dl {
-  margin: 0 0 1em;
   h2 {
     font-size: 20px;
 
