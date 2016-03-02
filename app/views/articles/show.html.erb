@@ -16,7 +16,11 @@
 
   <section class="block-comment">
     <h2 class="blc-heading">コメント</h2>
+<% if @article.comments.size > 0 %>
 <%= render @article.comments %>
+<% else %>
+    <p>まだコメントがありません</p>
+<% end %>
 
     <section class="block-comment-add">
 <%
