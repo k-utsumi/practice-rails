@@ -2,11 +2,14 @@
 // ==================================================
 
 .button {
+  $color: #888;
+
   display: inline-block;
   border-radius: 4px;
   border: solid 1px $color-border-base;
+  outline: 0;
   padding: .25em .5em;
-  background-color: #888;
+  background-color: $color;
   color: #fff;
   text-decoration: none;
 
@@ -15,15 +18,26 @@
   font-size: 14px;
   line-height: 1.25;
 
+  cursor: pointer;
+
   &.size-sm { font-size: 12px }
   &.size-lg {
     padding: .5em .75em;
     font-size: 16px;
   }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color, 8%);
+  }
+  &:active {
+    box-shadow: 0 .2em .3em -.1em #000 inset;
+  }
 }
 
 .alert {
   $color: #c99;
+  margin-bottom: 1rem;
   padding: 1em;
   border-radius: 6px;
   border: solid $color;
