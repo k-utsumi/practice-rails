@@ -12,9 +12,14 @@
 
   vertical-align: bottom;
 
+  font-size: 14px;
   line-height: 1.25;
 
-&.size-small { font-size: 12px }
+  &.size-sm { font-size: 12px }
+  &.size-lg {
+    padding: .5em .75em;
+    font-size: 16px;
+  }
 }
 
 .alert {
@@ -29,6 +34,14 @@
 }
 
 
+.h2-block {
+  margin: 2em 0 1rem;
+  border: solid;
+  border-width: 1px 0;
+  padding: .5em;
+}
+
+
 @import "components/lists";
 
 
@@ -38,7 +51,7 @@
 
     h1 { float: left }
     ul {
-      margin-top: 3px;
+      margin-top: .1em;
       text-align: right;
     }
   }
@@ -48,35 +61,44 @@
   }
 }
 
-.block-comment,
-.block-comment-add {
-  margin: 1.75em 0;
+
+.block-comments {
   font-size: 14px;
+
+  article + article {
+    $padding: 1rem;
+    margin: $padding 0 0;
+    padding-top: $padding;
+    border-top: solid 1px $color-border-base;
+  }
+  dl { margin: 0 }
+  dt { color: #6b96b3 }
 }
 
-.block-comment {
-  margin-top: 2.5em;
-  > .blc-heading {
-    margin: 1.3em 0;
-    border: solid;
-    border-width: 1px 0;
-    padding: .5em;
+
+.form-article {
+  font-size: 14px;
+  dt {
+    color: #aaa;
+    font-weight: bolder;
   }
-  article {
-    dl { margin-bottom: .5rem }
-    dt { color: #6b96b3 }
-  }
+  textarea { height: 15em }
 }
 
-.block-comment-add {
+.form-comment {
+  margin: 1.5rem 0;
   border-radius: $border-radius-base;
   border: solid 1px $color-border-base;
   padding: 1em 1.2em;
+  font-size: 14px;
 
   > .blc-heading {
     margin-bottom: .25em;
   }
-  dt { color: #aaa }
+  dt {
+    color: #aaa;
+    font-weight: bolder;
+  }
   textarea { height: 5em }
 
   :first-child { margin-top: 0 }

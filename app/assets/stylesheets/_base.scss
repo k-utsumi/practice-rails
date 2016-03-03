@@ -27,6 +27,11 @@ body {
   font: 100%/1.25 Meiryo, "Hiragino Kaku Gothic Pro", "Helvetica Neue", Helvetica, sans-serif;
 }
 
+hr {
+  margin: 1rem 0;
+  border-width: 1px 0 0;
+}
+
 h1 {
   margin: 0 0 1rem;
   font-size: 24px;
@@ -56,7 +61,8 @@ ul, ol, dl {
 }
 ul { padding-left: 1.25em }
 
-dt { font-weight: bolder }
+li + li { margin-top: .2em }
+
 dd {
   margin: .5em 0;
   + dt { margin-top: .75em }

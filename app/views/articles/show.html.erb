@@ -2,8 +2,8 @@
   <header>
     <h1><%= @article.title %></h1>
     <ul class="list-inline">
-      <li><%= link_to '編集', edit_article_path(@article), role: 'button', class: 'button size-small' %></li>
-      <li><%= link_to '削除',      article_path(@article), role: 'button', class: 'button size-small',
+      <li><%= link_to '編集', edit_article_path(@article), role: 'button', class: 'button' %></li>
+      <li><%= link_to '削除',      article_path(@article), role: 'button', class: 'button',
         method: :delete,
         data: { confirm: '削除してもよろしいですか？' }
       %></li>
@@ -14,15 +14,17 @@
     <%= simple_format(@article.text) %>
   </div>
 
-  <section class="block-comment">
-    <h2 class="blc-heading">コメント</h2>
+  <section>
+    <h2 class="h2-block">コメント</h2>
 <% if !@article.comments.empty? %>
+    <div class="block-comments">
 <%= render @article.comments %>
+    </div>
 <% else %>
     <p>まだコメントがありません</p>
 <% end %>
 
-    <section class="block-comment-add">
+    <section>
 <%
       # <h3 class="blc-heading">コメントを書く</h3>
 %>

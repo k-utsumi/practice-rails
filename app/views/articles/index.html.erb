@@ -8,8 +8,8 @@
         <%= simple_format(article.text) %>
       </div>
       <ul class="list-inline">
-        <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button size-small' %></li>
-        <li><%= link_to '削除',      article_path(article), role: 'button', class: 'button size-small',
+        <li><%= link_to '編集', edit_article_path(article), role: 'button', class: 'button size-sm' %></li>
+        <li><%= link_to '削除',      article_path(article), role: 'button', class: 'button size-sm',
           method: :delete,
           data: { confirm: '削除してもよろしいですか？' }
         %></li>

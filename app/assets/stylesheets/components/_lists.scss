@@ -1,7 +1,12 @@
+// components/_lists.scss
+// ==================================================
 
 .list-inline {
   padding-left: 0;
-  > li { display: inline-block }
+  > li {
+    display: inline-block;
+    margin-top: 0;
+  }
 }
 
 
