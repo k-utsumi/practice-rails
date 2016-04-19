@@ -4,8 +4,7 @@
     <dt><%= comment.commenter %></dt>
     <% end %>
     <dd>
-<%= simple_format(comment.body) %>
-
+      <%= simple_format(comment.body) %>
       <ul class="list-inline">
         <li><%= link_to '削除', [comment.article, comment], role: 'button', class: 'button size-sm',
           method: :delete,
