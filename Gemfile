@@ -49,3 +49,5 @@ group :development do
 end
 
 gem "meta_request", :group => [:development, :test]
+
+gem 'draper'
