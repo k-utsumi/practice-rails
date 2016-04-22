@@ -37,12 +37,18 @@
     }
   }
   .lst-heading {
-    margin-bottom: 1rem;
+    float: left;
+    margin-bottom: .5rem;
     font-size: 18px;
   }
-  .text {
+  time {
+    font-size: 14px;
+    vertical-align: -.08em;
+  }
+  .lst-body {
+    clear: both;
     margin-bottom: 1rem;
     font-size: 14px
   }
-  ul { margin-bottom: 0 }
+  .list-inline { margin-bottom: 0 }
 }
