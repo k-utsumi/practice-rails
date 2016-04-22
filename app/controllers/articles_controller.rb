@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "hoge", password: "fuga", except: [:index, :show]
 
   def index
-    @articles = Article.all.reverse_order
+    @articles = Article.all.reverse_order.decorate
   end
 
   def create
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]).decorate
   end
 
   def update

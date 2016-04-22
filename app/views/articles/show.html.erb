@@ -1,6 +1,7 @@
 <article class="article">
   <header>
     <h1><%= @article.title %></h1>
+    <p class="text-right"><%= @article.created_at %></p>
     <ul class="list-inline">
       <li><%= link_to '編集', edit_article_path(@article), role: 'button', class: 'button' %></li>
       <li><%= link_to '削除',      article_path(@article), role: 'button', class: 'button',
