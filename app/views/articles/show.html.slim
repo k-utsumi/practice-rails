@@ -1,0 +1,30 @@
+article.article
+  header
+    h1
+      = @article.title
+    p.text-right
+      = @article.created_at
+    ul.list-inline
+      li
+        = link_to '編集', edit_article_path(@article), role: 'button', class: 'button'
+      '
+      li
+        = link_to '削除',      article_path(@article), role: 'button', class: 'button',
+          method: :delete,
+          data: { confirm: '削除してもよろしいですか？' }
+  .text
+    = simple_format(@article.text)
+  section
+    h2.h2-block コメント
+    - if !@article.comments.empty?
+      .block-comments
+        = render @article.comments
+    - else
+      p まだコメントがありません
+    section
+      / h3.blc-heading コメントを書く
+      = render "comments/form"
+hr
+ul
+  li
+    = link_to '一覧に戻る', articles_path

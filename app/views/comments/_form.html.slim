@@ -1,0 +1,7 @@
+= form_for ([@article, @article.comments.build]), :html => {class: "form-comment"} do |f|
+  dl
+    dt #{ f.label :commenter }
+    dd #{ f.text_field :commenter }
+    dt #{ f.label :body }
+    dd #{ f.text_area :body }
+  p #{ f.submit value: "コメントを投稿", role: "button", class: "button size-lg" }
