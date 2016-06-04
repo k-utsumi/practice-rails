@@ -19,6 +19,8 @@ article.article
     - if !@article.comments.empty?
       .block-comments
         = render @article.comments
+        = react_component('CommentBox', data: [{ author: "Pete Hunt", text: "This is one commentaaa" },
+          { author: "Jordan Walke", text: "This is *another* comment" } ])
     - else
       p まだコメントがありません
     section
