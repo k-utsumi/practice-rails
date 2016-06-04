@@ -51,3 +51,4 @@ end
 gem "meta_request", :group => [:development, :test]
 
 gem 'draper'
+gem 'react-rails'
